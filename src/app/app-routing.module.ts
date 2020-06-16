@@ -8,9 +8,7 @@ import { SobreComponent } from './views/sobre/sobre/sobre.component';
 
 const routes: Routes = [
   { path: 'book', component: BookComponent },
-  // { path: 'genre', component: Genre },
   { path: 'catalogue', component: CatalogueComponent },
-  // { path: 'about', component: aboutComponent }
   { path: 'genre', component: GenreComponent },
   { path: 'sobre', component: SobreComponent },
 
