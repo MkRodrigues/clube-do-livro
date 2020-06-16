@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "clubedolivro"
+    }
+  },
+  "defaultProject": "clubedolivro",
+  "cli": {
+    "analytics": false
+  }
 }
