@@ -1,0 +1,98 @@
+<div class="container-fluid p-0">
+    <div class="">
+        <div class="row justify-content-between align-items-center my-4 ">
+            <h1 class="logo">Clube do Livro</h1>
+            <h2 class="page-title">Gerenciar Livros</h2>
+        </div>
+        <div class="my-5">
+            <img class="main-picture" src="assets/meninoLendo.svg" alt="">
+        </div>
+        <div class="row justify-content-between align-items-center px-4">
+            <div class="form-group">
+                <label for="">Selecione para editar</label>
+                <select class="form-control" [(ngModel)]="selectedBook" (change)="select(selectedBook)">
+                    <option>Selecione um Item</option>
+                    <option *ngFor="let book of arrayBooks" [ngValue]="book">
+                        {{book.name}}
+                    </option>
+                </select>
+            </div>
+            <div class="">
+                <button class="btn btn-outline-info mr-3" (click)="listOfBooks()">Atualizar</button>
+                <button class="btn btn-info" (click)="newBook()">Novo Livro</button>
+                <button class="btn btn-success" (click)="saveBook()">Salvar Livro</button>
+                <button class="btn btn-danger ml-3">Excluir Livro</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light rounded-lg" *ngIf="selectedBook">
+        <div class="container py-4">
+            <div class="row">
+                <div class="form-form-group col-3 mb-4">
+                    <label for="">Status</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.status">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-7">
+                    <label for="">Nome do Livro</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.name">
+                </div>
+                <!-- Precisa ser um select  -->
+                <div class="form-group col-3">
+                    <label for="">Gênero</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.genre">
+                </div>
+                <!-- Fim -->
+                <div class="form-group col-2">
+                    <label for="">Páginas</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.pages">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-2">
+                    <label for="">Formato</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.format">
+                </div>
+
+                <div class="form-group col-5">
+                    <label for="">Autor</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.author">
+                </div>
+
+                <div class="form-group col-5">
+                    <label for="">Ilustrador</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.illustrator">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="">Edição</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.edition">
+                </div>
+
+                <div class="form-group col-5">
+                    <label for="">Editora</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.publishingCompany">
+                </div>
+
+                <div class="form-group col-3">
+                    <label for="">Ano de Edição</label>
+                    <input class="form-control" type="text" [(ngModel)]="selectedBook.editionYear">
+                </div>
+            </div>
+            <div class="d-flex justify-content-end my-3">
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="d-flex justify-content-end mt-4">
+    <img class="img-footer" src="assets/pilha-livros.svg" alt="">
+</div>
