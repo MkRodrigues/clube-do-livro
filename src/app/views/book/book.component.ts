@@ -61,10 +61,14 @@ export class BookComponent implements OnInit {
     }
   }
 
+  // Exclui um livro após confirmação
   delete(id: string) {
-    this.bookService.deleteBook(id).subscribe(() => {
-      alert('Livro removido com Sucesso!');
-      this.listOfBooks();
-    });
+    if (confirm('O item será excluído, continuar?')) {
+      this.bookService.deleteBook(id).subscribe(() => {
+        alert('Livro removido com Sucesso!');
+        this.listOfBooks();
+        this.cancel();
+      });
+    }
   }
 }

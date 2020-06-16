@@ -8,12 +8,6 @@
     </div>
 
     <div class="container-fluid bg-light p-5 m-0">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Procure seus livros cadastrados">
-            <div class="input-group-append">
-                <button class="btn btn-outline-info" type="button" id="button-addon2">Pesquisar</button>
-            </div>
-        </div>
         <table class="table">
             <thead class="bg-info text-white">
                 <tr>
@@ -26,21 +20,19 @@
                     <th scope="col">Editora</th>
                     <th scope="col">Edição</th>
                     <th scope="col">Ano Ed.</th>
-                    <th scope="col">Ilustrador</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Tenho</td>
-                    <td>Harry Potter e o Prisioneiro de Askabam</td>
-                    <td>Aventura</td>
-                    <td>490</td>
-                    <td>Digital</td>
-                    <td>Stephen King</td>
-                    <td>Editora Voar</td>
-                    <td>1990</td>
-                    <td>5</td>
-                    <td>Não possui</td>
+                <tr *ngFor="let book of booksSharing">
+                    <td>{{book.status}}</td>
+                    <td>{{book.name}}</td>
+                    <td>{{book.genre}}</td>
+                    <td>{{book.pages}}</td>
+                    <td>{{book.format}}</td>
+                    <td>{{book.author}}</td>
+                    <td>{{book.publishingCompany}}</td>
+                    <td>{{book.edition}}</td>
+                    <td>{{book.editionYear}}</td>
                 </tr>
             </tbody>
         </table>

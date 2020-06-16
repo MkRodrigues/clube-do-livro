@@ -5,7 +5,6 @@ export class Book {
     pages: number;
     format: string;
     author: string;
-    illustrator: string;
     edition: string;
     publishingCompany: string;
     editionYear: string;
