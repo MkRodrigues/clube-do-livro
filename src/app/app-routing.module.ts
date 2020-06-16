@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BookComponent } from './views/book/book.component';
 import { CatalogueComponent } from './views/catalogue/catalogue.component';
+import { GenreComponent } from './views/genre/genre/genre.component';
+import { SobreComponent } from './views/sobre/sobre/sobre.component';
 
 
 const routes: Routes = [
@@ -9,6 +11,8 @@ const routes: Routes = [
   // { path: 'genre', component: Genre },
   { path: 'catalogue', component: CatalogueComponent },
   // { path: 'about', component: aboutComponent }
+  { path: 'genre', component: GenreComponent },
+  { path: 'sobre', component: SobreComponent },
 
 ];
 
